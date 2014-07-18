@@ -30,4 +30,19 @@
       expect(sara.deposits).to.have.length(1);
  });
   });
+  describe('#withdrawal', function(){
+    it('should deduct a withdrawal from account', function(){
+      var sara = new Account(3,'Sara','Savings',5000);
+      sara.withdrawal(3000);
+      expect(sara.balance).to.equal(2000);
+      expect(sara.withdrawals).to.have.length(1);
+      });
+    it('should deduct a withdrawal from account', function(){
+      var sara = new Account(3,'Sara','Savings',2000);
+      sara.withdrawal(3000);
+      expect(sara.balance).to.equal(-1050);
+      });
+     });
+
+
  });

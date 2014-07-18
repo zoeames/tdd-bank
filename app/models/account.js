@@ -12,9 +12,19 @@ function Account (num,name,type,balance){
 
 }
 
-Account.prototype.deposit = function(deposit){
-  this.deposits.push(deposit);
-  this.balance += deposit;
+Account.prototype.deposit = function(amount){
+  this.deposits.push(amount);
+  this.balance += amount;
 };
+
+Account.prototype.withdrawal = function(amount){
+  this.withdrawals.push(amount);
+  this.balance -= amount;
+
+  if(this.balance < 0){
+   this.balance -= 50;
+  }
+};
+
 
 module.exports = Account;
