@@ -10,12 +10,9 @@
  describe('Bank', function(){
   describe ('constructor',function(){
   it ('should create a new Bank', function(){
-    var bank = new Bank();
+    var bank = new Bank('Chase');
     expect(bank).to.be.ok;
     expect(bank).to.be.instanceof(Bank);
-  });
-  it('should create a new Bank with arguments',function(){
-    var bank = new Bank('Chase');
     expect(bank.name).to.equal ('Chase');
     expect (bank.accounts).to.be.a('array');
     expect(bank.accounts).to.have.length(0); 
